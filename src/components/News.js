@@ -29,8 +29,12 @@ export class News extends Component {
   }
  
     async updateNews(){
-      const url =
-      `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=070cb9e85332417f801a55d877687676&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+      const url =`https://gnews.io/api/v4/top-headlines?category=${this.props.category}&lang=en&country=${this.props.country}&max=9&apikey=8ccc54666b02591ac6e8a83fdf6c99f6&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+
+
+      // const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=070cb9e85332417f801a55d877687676&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+
+
     let data = await fetch(url);
     let parsedData = await data.json();
     console.log(parsedData);
@@ -78,9 +82,10 @@ export class News extends Component {
                         ? element.description.slice(0, 45)
                         : ""
                     }
-                    author={element.author}
+                    author={element.source.name}
                     date={element.publishedAt}
-                    imageUrl={element.urlToImage}
+                    // imageUrl={element.urlToImage}
+                    imageUrl={element.image}
                     newsUrl={element.url}
                   />
                 </div>
