@@ -8,7 +8,7 @@ export class NewsItem extends Component {
       <>
         <div className="my-3">
           <div className="card" style={{ width: "18 rem" }}>
-            <img src={!imageUrl?"https://blog.playstation.com/tachyon/2023/10/cd56722db7b991b3d7a33f1bafd55f80d0ac553d.png?resize=1088%2C612&crop_strategy=smart&zoom=1.5":imageUrl} className="card-img-top" alt="..." />
+            <img src={!imageUrl?"https://blog.playstation.com/tachyon/2023/10/cd56722db7b991b3d7a33f1bafd55f80d0ac553d.png?resize=1088%2C612&crop_strategy=smart&zoom=1.5":imageUrl} className="card-img-top" alt="..." style={{ maxHeight: "180px", width: "100%", objectFit: "cover" }} />
             <div className="card-body">
               <h5 className="card-title">{title}...</h5>
               <p className="card-text">{description}...</p>
